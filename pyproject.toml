@@ -1,0 +1,14 @@
+[project]
+name = "agentic-ai-portfolio"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "arize-phoenix>=19.6.0",
+    "openai>=2.48.0",
+    "openinference-instrumentation-openai>=0.1.52",
+    "python-dotenv>=1.2.2",
+    "sqlalchemy>=2.0.51",
+    "streamlit>=1.60.0",
+]
