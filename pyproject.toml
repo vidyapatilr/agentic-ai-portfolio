@@ -8,8 +8,10 @@ dependencies = [
     "arize-phoenix>=19.6.0",
     "openai>=2.48.0",
     "openinference-instrumentation-openai>=0.1.52",
+    "phoenix>=0.9.1",
     "psycopg2-binary>=2.9.12",
     "python-dotenv>=1.2.2",
     "sqlalchemy>=2.0.51",
     "streamlit>=1.60.0",
+    "tracing>=0.1.3",
 ]

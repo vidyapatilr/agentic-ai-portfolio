@@ -18,10 +18,12 @@ dependencies = [
     { name = "arize-phoenix" },
     { name = "openai" },
     { name = "openinference-instrumentation-openai" },
+    { name = "phoenix" },
     { name = "psycopg2-binary" },
     { name = "python-dotenv" },
     { name = "sqlalchemy" },
     { name = "streamlit" },
+    { name = "tracing" },
 ]
 
 [package.metadata]
@@ -29,10 +31,12 @@ requires-dist = [
     { name = "arize-phoenix", specifier = ">=19.6.0" },
     { name = "openai", specifier = ">=2.48.0" },
     { name = "openinference-instrumentation-openai", specifier = ">=0.1.52" },
+    { name = "phoenix", specifier = ">=0.9.1" },
     { name = "psycopg2-binary", specifier = ">=2.9.12" },
     { name = "python-dotenv", specifier = ">=1.2.2" },
     { name = "sqlalchemy", specifier = ">=2.0.51" },
     { name = "streamlit", specifier = ">=1.60.0" },
+    { name = "tracing", specifier = ">=0.1.3" },
 ]
 
 [[package]]
@@ -1915,6 +1919,12 @@ wheels = [
 ]
 
 [[package]]
+name = "phoenix"
+version = "0.9.1"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/d9/c1/ceb5ee9a7e70572741017fcf33b02b48bee4caa8ed8b0dfc2cbe6d299047/phoenix-0.9.1.zip", hash = "sha256:16c5d61d2e13c0ece7d2f656bcbd4532755ca36c1a3753f9158a5d53f58ebb20", size = 3625, upload-time = "2013-04-03T05:44:17.525Z" }
+
+[[package]]
 name = "pillow"
 version = "12.3.0"
 source = { registry = "https://pypi.org/simple" }
@@ -3183,6 +3193,12 @@ sdist = { url = "https://files.pythonhosted.org/packages/dd/84/da0e5038228fa34df
 wheels = [
     { url = "https://files.pythonhosted.org/packages/01/50/5817619a0fca56aff06383dbfde7ae017b3ca383915b3f1e4713164273cf/tqdm-4.69.1-py3-none-any.whl", hash = "sha256:0a654b96f7a2660cceb615b56f307ec2bef96c515409014a429a561981ab52b4", size = 675452, upload-time = "2026-07-24T14:22:00.048Z" },
 ]
+
+[[package]]
+name = "tracing"
+version = "0.1.3"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/5c/45/dc77e7664d330fc0a5189c5cc85c04d0bf9b821893215d88fd70895aa0b2/tracing-0.1.3.tar.gz", hash = "sha256:004118c805ba5729f0f1e3d729cda01ca69ed6a9d0d135b8a746f791c3596ed2", size = 2109, upload-time = "2017-11-07T23:54:13.656Z" }
 
 [[package]]
 name = "truststore"

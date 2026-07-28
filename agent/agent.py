@@ -2,10 +2,14 @@ import json
 import os
 from dotenv import load_dotenv
 from openai import OpenAI
-
+from tracing.setup import setup_tracing
 from agent.tools import get_order_status, check_refund_eligibility, escalate_to_human
+from opentelemetry import trace
+
+setup_tracing()
 
 load_dotenv()
+
 client = OpenAI(
     api_key=os.getenv("OPENROUTER_API_KEY"),
     base_url="https://openrouter.ai/api/v1",
@@ -83,8 +87,14 @@ Policy rules you must follow without exception:
 
 Always look up the order before making any decision. Never guess order details."""
 
+tracer = trace.get_tracer(__name__)
+
 
 def dispatch_tool(name: str, arguments: dict) -> str:
+    with tracer.start_as_current_span(f"tool.{name}") as span:
+        span.set_attribute("tool.name", name)
+        span.set_attribute("tool.arguments", str(arguments))
+
     if name == "get_order_status":
         result = get_order_status(**arguments)
     elif name == "check_refund_eligibility":
@@ -93,6 +103,8 @@ def dispatch_tool(name: str, arguments: dict) -> str:
         result = escalate_to_human(**arguments)
     else:
         result = {"error": f"Unknown tool: {name}"}
+
+    span.set_attribute("tool.result", str(result))
     return json.dumps(result)
 
 
