@@ -1,7 +1,10 @@
-import phoenix as px
+from phoenix.otel import register
 from openinference.instrumentation.openai import OpenAIInstrumentor
 
 
 def setup_tracing():
-    px.launch_app()
+    register(
+        project_name="agentaudit",
+        endpoint="http://localhost:6006/v1/traces",
+    )
     OpenAIInstrumentor().instrument()
